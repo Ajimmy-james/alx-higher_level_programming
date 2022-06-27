@@ -13,6 +13,8 @@ where `r` and `c` represent the row and column, respectively, where a
 queen must be placed on the chessboard.
 """
 import sys
+
+
 def init_board(n):
     """Initialize an `n`x`n` sized chessboard with 0's."""
     board = []
@@ -66,7 +68,7 @@ def xout(board, row, col):
         if c >= len(board):
             break
         board[r][c] = "x"
-            c += 1
+        c += 1
     # X out all spots diagonally up to the left
     c = col - 1
     for r in range(row - 1, -1, -1):
@@ -88,7 +90,9 @@ def xout(board, row, col):
             break
         board[r][c] = "x"
         c -= 1
-        def recursive_solve(board, row, queens, solutions):
+
+
+def recursive_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
     Args:
         board (list): The current working chessboard.
@@ -109,7 +113,8 @@ def xout(board, row, col):
             xout(tmp_board, row, c)
             solutions = recursive_solve(tmp_board, row + 1,
                                         queens + 1, solutions)
-            return (solutions)
+
+    return (solutions)
 
 
 if __name__ == "__main__":
